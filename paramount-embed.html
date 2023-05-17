@@ -42,9 +42,9 @@
   <h2>Embed configurations</h2>
   <div>
     <label for="embedscript">Embed script</label>
-    <input type="text" id="embedscript" required autofocus value="https://stage-www-mtv-com.webplex.vmn.io/scripts/paramount-embed.js">
+    <input type="text" id="embedscript" required autofocus value="https://nickjr-com-xvidw-2424-6223-kf-app.webplex.vmn.io/scripts/paramount-embed.js">
     <label for="mgid">MGID</label>
-    <input type="text" id="mgid" required value="mgid:arc:showvideo:mtv.com:43aadfb7-9b83-4e61-adde-885e952945a1">
+    <input type="text" id="mgid" required value="mgid:arc:showvideo:shared.nickjr.us:2a46d841-ae45-42ba-9acb-9313578c375c">
     <label for="showui">Show UI</label> 
     <input type="checkbox" id="showui" checked>
     <br/>
@@ -53,6 +53,15 @@
     <br/>
     <label for="allowfullscreen">Allow Fullscreen</label>
     <input type="checkbox" id="allowfullscreen" checked>
+    <br/>
+    <label for="muted">Muted</label>
+    <input type="checkbox" id="muted">
+    <br/>
+    <label for="endcontent">End Content Strategy</label>
+    <select id="endcontent">
+      <option value="replay">Replay</option>
+      <option value="loop">Loop</option>
+    </select>
     <button onclick="load()">Load player</button>
   </div>
 
@@ -87,6 +96,10 @@
       embed.ui = document.getElementById('showui').checked
       embed.autoplay = document.getElementById('autoplay').checked
       embed.allowFullscreen = document.getElementById('allowfullscreen').checked
+      embed.muted = document.getElementById('muted').checked
+      embed.endContentStrategy = document.getElementById('endcontent').value
+      
+      console.log(embed)
 
       // Reload script
       document.head.removeChild(embedScript)
