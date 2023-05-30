@@ -62,6 +62,13 @@
       <option value="replay">Replay</option>
       <option value="loop">Loop</option>
     </select>
+    <br />
+    <h4>Reporting data</h4>
+    <label for="appName">appName</label>
+    <input id="appName" value="appName"/>
+    <br />
+    <label for="channel">channel</label>
+    <input id="channel" value="channel" />
     <button onclick="load()">Load player</button>
   </div>
 
@@ -100,6 +107,8 @@
       embed.endContentStrategy = document.getElementById('endcontent').value
       
       console.log(embed)
+      embed.appName = document.getElementById('appName').value
+      embed.channel = document.getElementById('channel').value
 
       // Reload script
       document.head.removeChild(embedScript)
